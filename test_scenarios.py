@@ -46,7 +46,7 @@ TEST_CASES = [
     {
         "id": "TC02",
         "name": "Simple genre query",
-        "input": "Có phim kinh dị nào đang chiếu ở Hà Nội không?",
+        "input": "Có phim tình cảm nào đang chiếu ở Hà Nội không?",
         "expect": "recommend showtimes with horror genre",
     },
     {
