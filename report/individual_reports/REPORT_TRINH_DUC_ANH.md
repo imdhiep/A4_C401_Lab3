@@ -1,7 +1,7 @@
 # Individual Report: Lab 3 - Chatbot vs ReAct Agent
 
-- **Student Name**: Dương Văn Hiệp
-- **Student ID**: 2A202600052
+- **Student Name**: Trịnh Đức Anh
+- **Student ID**: 2A202600499
 - **Date**: 2026-04-06
 
 ---
