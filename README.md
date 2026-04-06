@@ -61,7 +61,7 @@ LOCAL_MODEL_PATH=./models/Phi-3-mini-4k-instruct-q4.gguf
 5.  **Grading & Bonus**: Follow the `SCORING.md` to maximize your points and explore bonus metrics.
 
 ## 🛠️ How to Use This Baseline
-The code is designed as a **Production Prototype**. It includes:
+This project is structured as a **production-style prototype**, so you can focus on the agent logic while still working with patterns commonly used in real-world systems. It includes:
 - **Telemetry**: Every action is logged in JSON format for later analysis.
 - **Robust Provider Pattern**: Easily extendable to any LLM API.
 - **Clean Skeletons**: Focus on the logic that matters—the agent's reasoning process.
