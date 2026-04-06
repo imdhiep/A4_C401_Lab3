@@ -1,4 +1,4 @@
-# Group Report: Lab 3 - Production-Grade Agentic System
+﻿# Group Report: Lab 3 - Production-Grade Agentic System
 
 - **Team Name**: ReAct Movie Booking - A4 - C401
 - **Team Members**: Dương Văn Hiệp (2A202600052), Trịnh Đức Anh (2A202600499), Hoàng Quốc Chung (2A202600070), Nguyễn Minh Quân (2A202600181), Hoàng Thái Dương (2A202600073).
@@ -8,7 +8,12 @@
 
 ## 1. Executive Summary
 
-Hệ thống ReAct Agent đặt vé xem phim tại Việt Nam được xây dựng để so sánh với Chatbot baseline. Agent sử dụng vòng lặp Thought-Action-Observation để thực hiện các bước: tìm suất chiếu → giữ ghế → áp mã giảm giá → xác nhận.
+Nhóm xây dựng hệ thống so sánh trực tiếp giữa:
+- **Chatbot baseline** (`src/agent/chatbot.py`): trả lời bằng LLM, không dùng tool.
+- **ReAct agent** (`src/agent/agent.py`): suy luận theo vòng lặp `Thought -> Action -> Observation` để thực thi nghiệp vụ đặt vé.
+
+Phạm vi nghiệp vụ của agent:
+`recommend_showtimes -> hold_best_seats -> apply_best_promo -> Final Answer`.
 
 - **Success Rate**: Agent hoàn thành 100% quy trình đặt vé cho các query rõ ràng (happy path) khi dùng LLM mạnh (OpenAI `gpt-4o` qua GitHub Models và Gemini 2.0 Flash). Khi dùng `gpt-4o`, Agent thể hiện khả năng reasoning cực tốt, xử lý xong toàn bộ tác vụ chỉ qua vài step mượt mà. Ngược lại, với Local Phi-3 (3.8B), tỷ lệ thành công thấp hơn do model nhỏ khó follow ReAct format.
 - **Key Outcome**: Agent giải quyết được multi-step booking queries mà Chatbot chỉ có thể mô tả mà không thực hiện. Agent trả về dữ liệu grounded (tên rạp thật, ghế cụ thể, giá chính xác), trong khi Chatbot hallucinate toàn bộ.
@@ -238,3 +243,4 @@ Action: recommend_showtimes({"location":"Royal City","genre":"action",...})
 
 > **Submitted by**: A4 - C401.
 > **Date**: 2026-04-06
+> **Evidence files**: `src/`, `test_scenarios.py`, `test_results/results_local_20260406_142403.json`
